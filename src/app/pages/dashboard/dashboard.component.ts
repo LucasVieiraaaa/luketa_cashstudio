@@ -1,20 +1,15 @@
-import { Component } from '@angular/core';
-import { WidgetComponent } from "../../component/widget/widget.component";
-import { Widget } from '../../models/dashboard';
-import { WheelComponent } from './widgets/wheel/wheel.component';
+import { Component, inject } from '@angular/core';
+import { WidgetComponent } from '../../component/widget/widget.component';
+import { DashboardService } from '../services/dashboard';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [WidgetComponent],
+  providers: [DashboardService],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss'
+  styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
-
-  data: Widget = {
-    id:1,
-    label: 'Wheel',
-    content: WheelComponent
-  }
+  store = inject(DashboardService);
 }
