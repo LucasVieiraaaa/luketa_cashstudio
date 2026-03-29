@@ -7,16 +7,18 @@
 
     <mat-menu #widgetMenu="matMenu">
       @for (widget of store.widgetsToAdd(); track widget.id) {
-        <button mat-menu-item>
+        <button mat-menu-item (click)="store.addWidget(widget)">
           {{ widget.label }}
         </button>
-      }
+      } @empty {
+      <button mat-menu-item> Empty </button>
+    }
     </mat-menu>
   </div>
 
   <div class="app-widget-grid">
-    @for (w of store.widgets(); track w.id) {
-      <app-widget [data]="w"></app-widget>
+    @for (widget of store.addedWidgets(); track widget.id) {
+      <app-widget [data]="widget"></app-widget>
     }
   </div>
 </div>

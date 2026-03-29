@@ -1,0 +1,15 @@
+<div>
+  <button mat-icon-button (click)="showOptions.set(false)">
+    <mat-icon>close</mat-icon>
+  </button>
+  <div>
+    Width
+
+    <mat-button-toggle-group>
+      <mat-button-toggle [value]="1">1</mat-button-toggle>
+      <mat-button-toggle [value]="2">2</mat-button-toggle>
+      <mat-button-toggle [value]="3">3</mat-button-toggle>
+      <mat-button-toggle [value]="4">4</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</div>
