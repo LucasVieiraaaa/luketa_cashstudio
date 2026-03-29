@@ -1,4 +1,22 @@
-<h2>Dashboard</h2>
-@for (w of store.widgets(); track w.id) {
-    <app-widget [data]="w"></app-widget>
-}
+<div style="margin: 2em">
+  <div class="simple-header">
+    <h2>Channel Dashboard</h2>
+    <button mat-raised-button [mat-menu-trigger-for]="widgetMenu">
+      <mat-icon>add_circle</mat-icon>Add Widget
+    </button>
+
+    <mat-menu #widgetMenu="matMenu">
+      @for (widget of store.widgetsToAdd(); track widget.id) {
+        <button mat-menu-item>
+          {{ widget.label }}
+        </button>
+      }
+    </mat-menu>
+  </div>
+
+  <div class="app-widget-grid">
+    @for (w of store.widgets(); track w.id) {
+      <app-widget [data]="w"></app-widget>
+    }
+  </div>
+</div>
