@@ -2,9 +2,19 @@
   <div class="container mat-elevation-z3">
     <div class="flex-settings-inline">
       <h3 class="m-0">{{ data().label }}</h3>
-      <button mat-icon-button class="settings" (click)="showOptions.set(true)">
-        <mat-icon>settings</mat-icon>
-      </button>
+      <div class="flex-buttons">
+        <button mat-icon-button class="settings" (click)="showOptions.set(true)">
+          <mat-icon>settings</mat-icon>
+        </button>
+
+        <button mat-icon-button class="settings" (click)="showOptions.set(false)">
+          <mat-icon>close</mat-icon>
+        </button>
+
+        <button mat-icon-button class="settings">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
     </div>
     <ng-container [ngComponentOutlet]="data().content"></ng-container>
 
