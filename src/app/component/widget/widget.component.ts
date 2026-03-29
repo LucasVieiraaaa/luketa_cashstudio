@@ -10,7 +10,7 @@ import { WidgetOptionsComponent } from './widget-options/widget-options';
   standalone: true,
   imports: [MatIcon, MatButtonModule, NgComponentOutlet, WidgetOptionsComponent],
   templateUrl: './widget.component.html',
-  styleUrl: './widget.component.scss'
+  styleUrl: './widget.component.scss',
 })
 export class WidgetComponent {
   data = input.required<Widget>();
