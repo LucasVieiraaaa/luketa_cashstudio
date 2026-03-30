@@ -10,8 +10,5 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
   styleUrl: './widget-options.scss',
 })
 export class WidgetOptionsComponent {
-
   showOptions = model<boolean>(false);
-
-  
 }

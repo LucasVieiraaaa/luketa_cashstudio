@@ -5,13 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   standalone: true,
   imports: [],
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
